@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <h3 className="text-xl tracking-wider uppercase mb-4">Showtime Exotics</h3>
+            <h3 className="text-xl tracking-wider uppercase mb-4">ShowtimExotics</h3>
             <p className="text-gray-400 text-sm">
               Luxury vehicles for your creative vision.
             </p>
@@ -31,7 +31,7 @@ export default function Footer() {
                 About
               </Link>
               <Link to="/faq" className="block text-gray-400 hover:text-white text-sm transition-colors">
-                General Q's
+                Questions
               </Link>
             </div>
           </div>
@@ -41,18 +41,18 @@ export default function Footer() {
             <h3 className="text-sm uppercase tracking-wider mb-4">Contact</h3>
             <div className="space-y-3">
               <a
-                href="mailto:info@showtimeexotics.com"
+                href="mailto:showtimexotics@gmail.com"
                 className="flex items-center space-x-2 text-gray-400 hover:text-white text-sm transition-colors"
               >
                 <Mail size={16} />
-                <span>info@showtimeexotics.com</span>
+                <span>showtimexotics@gmail.com</span>
               </a>
               <a
-                href="tel:123-123-1234"
+                href="tel:778-536-7429"
                 className="flex items-center space-x-2 text-gray-400 hover:text-white text-sm transition-colors"
               >
                 <Phone size={16} />
-                <span>123-123-1234</span>
+                <span>778-536-7429</span>
               </a>
               <a
                 href="https://www.instagram.com/showtimexotics"
@@ -61,14 +61,14 @@ export default function Footer() {
                 className="flex items-center space-x-2 text-gray-400 hover:text-white text-sm transition-colors"
               >
                 <Instagram size={16} />
-                <span>@ShowtimeExotics</span>
+                <span>@ShowtimExotics</span>
               </a>
             </div>
           </div>
         </div>
 
         <div className="mt-8 pt-8 border-t border-white/10 text-center text-gray-400 text-sm">
-          <p>&copy; {new Date().getFullYear()} Showtime Exotics. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} ShowtimExotics. All rights reserved.</p>
         </div>
       </div>
     </footer>

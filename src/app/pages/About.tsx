@@ -19,7 +19,7 @@ export default function About() {
           <h2 className="text-3xl md:text-4xl mb-8 tracking-tight">Our Story</h2>
           <div className="space-y-4 text-gray-400 leading-relaxed">
             <p>
-              Showtime Exotics was founded with a simple yet powerful vision: to provide
+              ShowtimExotics was founded with a simple yet powerful vision: to provide
               content creators, photographers, videographers, and event planners access to
               the world's most stunning luxury vehicles for their creative projects.
             </p>

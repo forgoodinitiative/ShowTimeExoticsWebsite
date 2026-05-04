@@ -72,10 +72,10 @@ export default function Contact() {
                   <div>
                     <p className="text-sm text-gray-400 mb-1">Email</p>
                     <a
-                      href="mailto:info@showtimeexotics.com"
+                      href="mailto:showtimexotics@gmail.com"
                       className="hover:text-gray-300 transition-colors"
                     >
-                      info@showtimeexotics.com
+                      showtimexotics@gmail.com
                     </a>
                   </div>
                 </div>
@@ -85,10 +85,10 @@ export default function Contact() {
                   <div>
                     <p className="text-sm text-gray-400 mb-1">Phone</p>
                     <a
-                      href="tel:123-123-1234"
+                      href="tel:778-536-7429"
                       className="hover:text-gray-300 transition-colors"
                     >
-                      123-123-1234
+                      778-536-7429
                     </a>
                   </div>
                 </div>
@@ -111,7 +111,7 @@ export default function Contact() {
                       rel="noopener noreferrer"
                       className="hover:text-gray-300 transition-colors"
                     >
-                      @ShowtimeExotics
+                      @ShowtimExotics
                     </a>
                   </div>
                 </div>
@@ -273,7 +273,7 @@ export default function Contact() {
                     className="mt-1"
                   />
                   <label htmlFor="agree" className="text-sm text-gray-400">
-                    I understand that Showtime Exotics provides vehicles for static photoshoots
+                    I understand that ShowtimExotics provides vehicles for static photoshoots
                     only (no driving) and agree to the rental terms and conditions.
                   </label>
                 </div>

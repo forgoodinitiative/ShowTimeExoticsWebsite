@@ -150,7 +150,7 @@ export default function Home() {
             rel="noopener noreferrer"
             className="text-3xl md:text-4xl hover:text-gray-300 transition-colors"
           >
-            @ShowtimeExotics
+            @ShowtimExotics
           </a>
         </div>
       </section>
