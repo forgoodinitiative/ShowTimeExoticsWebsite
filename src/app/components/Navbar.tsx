@@ -9,9 +9,11 @@ export default function Navbar() {
   const navLinks = [
     { path: "/", label: "Home" },
     { path: "/inventory", label: "Inventory" },
-    { path: "/about", label: "About" },
+    { path: "/about", label: "Our Brand" },
     { path: "/contact", label: "Contact" },
     { path: "/faq", label: "FAQ" },
+    // TODO 
+    // Prized car page
   ];
 
   const isActive = (path: string) => {
