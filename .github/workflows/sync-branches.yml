@@ -1,0 +1,57 @@
+# This workflow automatically syncs all your feature branches with main
+# whenever a new commit is pushed to main.
+
+name: Sync Branches with Main
+
+on:
+  push:
+    branches:
+      - main  # Only triggers when someone pushes (or merges a PR) into main
+
+jobs:
+  sync:
+    name: Sync ${{ matrix.branch }} with main
+    runs-on: ubuntu-latest  # GitHub spins up a fresh Linux VM for each run
+
+    strategy:
+      fail-fast: false  # If one branch fails to sync, keep trying the others
+      matrix:
+        # List every branch you want to keep in sync with main.
+        # Add or remove branches here as your project grows.
+        branch:
+          - dev
+          - inventory
+          - smoothscrolling
+          - ui-static
+
+    steps:
+      # Step 1: Check out the full repo history.
+      # fetch-depth: 0 means we get ALL commits, not just the latest one.
+      # This is required for merging to work correctly.
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}  # GitHub automatically provides this — no setup needed
+
+      # Step 2: Tell Git who is making the merge commit.
+      # GitHub Actions runs as a bot, so we give it a name and email.
+      - name: Configure Git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      # Step 3: Switch to the feature branch and merge main into it.
+      # If there are no new commits on main, Git will skip the merge (nothing to do).
+      # If there's a CONFLICT (e.g. both main and the branch edited the same line),
+      # this step will fail — GitHub will show the error in the Actions tab so a
+      # developer can resolve it manually.
+      - name: Merge main into ${{ matrix.branch }}
+        run: |
+          git checkout ${{ matrix.branch }}
+          git merge origin/main --no-edit  # --no-edit uses the default merge commit message
+
+      # Step 4: Push the updated branch back to GitHub.
+      - name: Push updated ${{ matrix.branch }}
+        run: |
+          git push origin ${{ matrix.branch }}
