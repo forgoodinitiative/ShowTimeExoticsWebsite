@@ -52,8 +52,9 @@ jobs:
       # developer can resolve it manually.
       - name: Merge main into ${{ matrix.branch }}
         run: |
-          git checkout ${{ matrix.branch }}
-          git merge origin/main --no-edit  # --no-edit uses the default merge commit message
+          git fetch origin
+          git checkout -B ${{ matrix.branch }} origin/${{ matrix.branch }}
+          git merge origin/main --no-edit --allow-unrelated-histories
 
       # Step 4: Push the updated branch back to GitHub.
       - name: Push updated ${{ matrix.branch }}
