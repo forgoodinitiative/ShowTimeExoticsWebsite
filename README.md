@@ -1,4 +1,5 @@
 # ShowTimeExoticsWebsite
-Repo for git version control for showtime exotics
+Repo for git version control for ShowTimeExotics
 
-Hello
+Authors: Armin Ahmadi, Felix Kongyuy, Nathan Omana
+
