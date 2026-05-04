@@ -56,9 +56,12 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <button
+          onClick={() => window.scrollBy({ top: window.innerHeight, behavior: "smooth" })}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer bg-transparent border-none p-0"
+        >
           <ChevronDown size={32} className="text-white/60" />
-        </div>
+        </button>
       </section>
 
       {/* Our Partners Section */}
