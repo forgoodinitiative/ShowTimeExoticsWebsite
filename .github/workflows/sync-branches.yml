@@ -7,6 +7,10 @@ on:
   push:
     branches:
       - main  # Only triggers when someone pushes (or merges a PR) into main
+  workflow_dispatch:
+
+permissions: 
+  contents: write
 
 jobs:
   sync:
