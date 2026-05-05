@@ -70,10 +70,10 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl text-center mb-12 tracking-tight">
             Our Partners
           </h2>
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-8 items-center opacity-60">
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-8 items-center">
             {["Ferrari", "Lamborghini", "Bugatti", "Bentley", "Porsche", "Rolls-Royce"].map((brand) => (
-              <div key={brand} className="text-center">
-                <p className="text-lg uppercase tracking-widest">{brand}</p>
+              <div key={brand} className="text-center opacity-60 hover:opacity-100 transition-all duration-300 cursor-pointer">
+                <p className="text-lg uppercase tracking-widest hover:font-bold hover:text-white">{brand}</p>
               </div>
             ))}
           </div>
@@ -83,7 +83,7 @@ export default function Home() {
       {/* The Fleet Preview */}
       <section className="py-20 border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl mb-12 tracking-tight">The Fleet</h2>
+          <h2 className="text-3xl md:text-4xl mb-12 tracking-tight">Inventory</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {cars.slice(0, 3).map((car) => (
               <div
@@ -129,15 +129,9 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center space-x-2 bg-white text-black px-8 py-4 uppercase text-sm tracking-wider hover:bg-gray-200 transition-colors"
+              className="inline-flex items-center justify-center space-x-2 bg-white text-black px-8 py-4 uppercase text-sm tracking-wider hover:bg-gray-300 transition-colors"
             >
               <span>Book Now</span>
-            </Link>
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center space-x-2 border border-white text-white px-8 py-4 uppercase text-sm tracking-wider hover:bg-white hover:text-black transition-colors"
-            >
-              <span>Contact</span>
             </Link>
           </div>
         </div>
@@ -151,7 +145,7 @@ export default function Home() {
             href="https://www.instagram.com/showtimexotics"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-3xl md:text-4xl hover:text-gray-300 transition-colors"
+            className="text-3xl md:text-4xl hover:text-gray-400 transition-colors"
           >
             @ShowtimExotics
           </a>
