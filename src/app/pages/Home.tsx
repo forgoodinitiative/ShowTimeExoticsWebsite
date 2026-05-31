@@ -3,6 +3,7 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 import { cars } from "../data/cars";
 import { useState, useEffect } from "react";
 import LoadingScreen from "../components/LoadingScreen";
+import heroVideo from "../../images/SnapInsta.to_AQNIH7zPEQEe4d1DkpsmhBczR1lcWHkIW9gGBam_tauLEV-Z2b4KhxsWQgFvEvMF_1BfQd6mpXdjh76IhYXwF0uluWbSB9soWCQEd1U.mp4";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -31,12 +32,15 @@ export default function Home() {
     <div className={`transition-opacity duration-500 ${showContent ? 'opacity-100' : 'opacity-0'}`}>
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${cars[0].image})`,
-          }}
-        >
+        <div className="absolute inset-0">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
+            src={heroVideo}
+          />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black" />
         </div>
 

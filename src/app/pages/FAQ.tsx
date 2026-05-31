@@ -115,66 +115,6 @@ export default function FAQ() {
         </div>
       </section>
 
-      {/* Policies Section */}
-      <section className="py-20 border-t border-white/10">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl mb-8 tracking-tight">Rental Policies</h2>
-          
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-xl mb-3">General Terms</h3>
-              <ul className="list-disc list-inside space-y-2 text-gray-400">
-                <li>All vehicles are for static display and photoshoot purposes only - no driving</li>
-                <li>Minimum rental period is 2 hours</li>
-                <li>Client must be 21+ years old with valid government-issued ID</li>
-                <li>Deposit required at time of booking (typically 50% of total rental fee)</li>
-                <li>Final payment due 48 hours before shoot date</li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-xl mb-3">Vehicle Care & Responsibility</h3>
-              <ul className="list-disc list-inside space-y-2 text-gray-400">
-                <li>Client is responsible for any damage to the vehicle during rental period</li>
-                <li>No smoking, eating, or drinking inside vehicles</li>
-                <li>Vehicles must remain on approved surfaces (no dirt, gravel, or rough terrain)</li>
-                <li>Any cosmetic damage must be reported immediately</li>
-                <li>Client must ensure vehicles are not exposed to extreme weather conditions</li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-xl mb-3">Delivery & Setup</h3>
-              <ul className="list-disc list-inside space-y-2 text-gray-400">
-                <li>Delivery and pickup times will be coordinated in advance</li>
-                <li>Client must ensure location is accessible for transport vehicle</li>
-                <li>Delivery fees calculated based on distance from Vancouver base</li>
-                <li>Setup and positioning assistance can be provided upon request</li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-xl mb-3">Cancellations & Rescheduling</h3>
-              <ul className="list-disc list-inside space-y-2 text-gray-400">
-                <li>7+ days notice: Full refund of deposit</li>
-                <li>3-6 days notice: 50% refund of deposit</li>
-                <li>Less than 48 hours: No refund</li>
-                <li>Weather-related rescheduling available with 24 hours notice</li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-xl mb-3">Insurance & Liability</h3>
-              <ul className="list-disc list-inside space-y-2 text-gray-400">
-                <li>All vehicles are insured by Showtime Exotics</li>
-                <li>Clients are strongly encouraged to carry production/event insurance</li>
-                <li>Client assumes liability for damage occurring during rental period</li>
-                <li>Security deposit may be required for certain high-value vehicles</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Still Have Questions CTA */}
       <section className="py-20 border-t border-white/10">
