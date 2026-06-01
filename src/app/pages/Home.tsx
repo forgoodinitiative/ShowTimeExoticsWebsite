@@ -1,6 +1,6 @@
 import { Link } from "react-router";
-import { ArrowRight, ChevronDown } from "lucide-react";
-import { cars } from "../data/cars";
+import { ArrowRight, ChevronDown, ChevronLeft, ChevronRight, X } from "lucide-react";
+import { cars, Car } from "../data/cars";
 import { useState, useEffect } from "react";
 import LoadingScreen from "../components/LoadingScreen";
 import heroVideo from "../../images/SnapInsta.to_AQNIH7zPEQEe4d1DkpsmhBczR1lcWHkIW9gGBam_tauLEV-Z2b4KhxsWQgFvEvMF_1BfQd6mpXdjh76IhYXwF0uluWbSB9soWCQEd1U.mp4";
@@ -8,9 +8,10 @@ import heroVideo from "../../images/SnapInsta.to_AQNIH7zPEQEe4d1DkpsmhBczR1lcWHk
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const [showContent, setShowContent] = useState(false);
+  const [selectedCar, setSelectedCar] = useState<Car | null>(null);
+  const [modalImageIndex, setModalImageIndex] = useState(0);
 
   useEffect(() => {
-    // Check if user has already seen loading screen in this session
     const hasSeenLoading = sessionStorage.getItem("hasSeenLoading");
     if (hasSeenLoading) {
       setLoading(false);
@@ -24,9 +25,35 @@ export default function Home() {
     setTimeout(() => setShowContent(true), 100);
   };
 
+  const openModal = (car: Car) => {
+    setSelectedCar(car);
+    setModalImageIndex(0);
+  };
+
+  const closeModal = () => setSelectedCar(null);
+
+  const prevImage = () =>
+    setModalImageIndex((i) => (i - 1 + (selectedCar?.images.length ?? 1)) % (selectedCar?.images.length ?? 1));
+
+  const nextImage = () =>
+    setModalImageIndex((i) => (i + 1) % (selectedCar?.images.length ?? 1));
+
   if (loading) {
     return <LoadingScreen onComplete={handleLoadingComplete} />;
   }
+
+  const specs = selectedCar
+    ? [
+        { label: "Make", value: selectedCar.brand },
+        { label: "Model", value: selectedCar.model },
+        ...(selectedCar.Trim && selectedCar.Trim !== "N/A" ? [{ label: "Trim", value: selectedCar.Trim }] : []),
+        ...(selectedCar.year && selectedCar.year !== "N/A" ? [{ label: "Year", value: selectedCar.year }] : []),
+        ...(selectedCar.BodyStyle && selectedCar.BodyStyle !== "N/A" ? [{ label: "Body", value: selectedCar.BodyStyle }] : []),
+        ...(selectedCar.ExteriorColor && selectedCar.ExteriorColor !== "N/A" ? [{ label: "Exterior", value: selectedCar.ExteriorColor }] : []),
+        ...(selectedCar.InteriorColor && selectedCar.InteriorColor !== "N/A" ? [{ label: "Interior", value: selectedCar.InteriorColor }] : []),
+        ...(selectedCar.StandoutFeatures && selectedCar.StandoutFeatures !== "N/A" ? [{ label: "Features", value: selectedCar.StandoutFeatures }] : []),
+      ]
+    : [];
 
   return (
     <div className={`transition-opacity duration-500 ${showContent ? 'opacity-100' : 'opacity-0'}`}>
@@ -90,9 +117,10 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl mb-12 tracking-tight">Inventory</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {cars.slice(0, 3).map((car) => (
-              <div
+              <button
                 key={car.id}
-                className="group relative aspect-[4/3] overflow-hidden bg-white/5"
+                onClick={() => openModal(car)}
+                className="group relative aspect-[4/3] overflow-hidden bg-white/5 text-left"
               >
                 <img
                   src={car.image}
@@ -106,7 +134,7 @@ export default function Home() {
                   </p>
                   <h3 className="text-xl">{car.model}</h3>
                 </div>
-              </div>
+              </button>
             ))}
           </div>
           <div className="text-center">
@@ -155,6 +183,100 @@ export default function Home() {
           </a>
         </div>
       </section>
+
+      {/* Car Detail Modal */}
+      {selectedCar && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-sm p-4"
+          onClick={closeModal}
+        >
+          <div
+            className="bg-zinc-950 border border-white/10 max-w-2xl w-full rounded-sm overflow-hidden shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Image carousel */}
+            <div className="relative aspect-[16/10] bg-zinc-900 overflow-hidden">
+              <img
+                key={modalImageIndex}
+                src={selectedCar.images[modalImageIndex]}
+                alt={`${selectedCar.brand} ${selectedCar.model}`}
+                className="w-full h-full object-cover"
+              />
+
+              {selectedCar.images.length > 1 && (
+                <>
+                  <button
+                    onClick={prevImage}
+                    className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white p-1.5 rounded-full transition-colors"
+                  >
+                    <ChevronLeft size={20} />
+                  </button>
+                  <button
+                    onClick={nextImage}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white p-1.5 rounded-full transition-colors"
+                  >
+                    <ChevronRight size={20} />
+                  </button>
+
+                  <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-1.5">
+                    {selectedCar.images.map((_, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setModalImageIndex(i)}
+                        className={`w-1.5 h-1.5 rounded-full transition-colors ${i === modalImageIndex ? "bg-white" : "bg-white/35 hover:bg-white/60"}`}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
+
+              <button
+                onClick={closeModal}
+                className="absolute top-3 right-3 bg-black/50 hover:bg-black/80 text-white p-1.5 rounded-full transition-colors"
+              >
+                <X size={18} />
+              </button>
+            </div>
+
+            {/* Info */}
+            <div className="p-6">
+              <div className="flex items-start justify-between mb-5">
+                <div>
+                  <p className="text-xs uppercase tracking-widest text-gray-500 mb-1">{selectedCar.brand}</p>
+                  <h2 className="text-3xl tracking-tight">
+                    {selectedCar.model}
+                    {selectedCar.Trim && selectedCar.Trim !== "N/A" && (
+                      <span className="text-gray-400 ml-2 text-2xl">{selectedCar.Trim}</span>
+                    )}
+                  </h2>
+                </div>
+                {selectedCar.images.length > 1 && (
+                  <span className="text-xs text-gray-600 mt-1">{modalImageIndex + 1} / {selectedCar.images.length}</span>
+                )}
+              </div>
+
+              {specs.filter(s => !["Make","Model","Trim"].includes(s.label)).length > 0 && (
+                <div className="grid grid-cols-2 gap-x-6 gap-y-2.5 text-sm mb-6 border-t border-white/10 pt-5">
+                  {specs.filter(s => !["Make","Model","Trim"].includes(s.label)).map((s) => (
+                    <div key={s.label} className="flex flex-col">
+                      <span className="text-[11px] uppercase tracking-wider text-gray-600 mb-0.5">{s.label}</span>
+                      <span className="text-gray-200">{s.value}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              <Link
+                to="/contact"
+                state={{ selectedCar: `${selectedCar.brand} ${selectedCar.model}` }}
+                className="block w-full bg-white text-black text-center py-3 text-sm uppercase tracking-widest hover:bg-gray-100 transition-colors font-medium"
+              >
+                Contact Us to Book
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

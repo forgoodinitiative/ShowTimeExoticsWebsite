@@ -1,12 +1,18 @@
 import { useState } from "react";
 import { useLocation } from "react-router";
-import { Mail, Phone, Instagram, MapPin } from "lucide-react";
+import { Mail, Phone, Instagram, MapPin, CalendarIcon } from "lucide-react";
 import { toast } from "sonner";
 import emailjs from "@emailjs/browser";
+import { format } from "date-fns";
+import { Calendar } from "../components/ui/calendar";
+import { Popover, PopoverContent, PopoverTrigger } from "../components/ui/popover";
 
 export default function Contact() {
   const location = useLocation();
   const selectedCar = location.state?.selectedCar || "";
+
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
+  const [calendarOpen, setCalendarOpen] = useState(false);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -54,6 +60,7 @@ export default function Contact() {
         shootLocation: "",
         message: "",
       });
+      setSelectedDate(undefined);
     } catch (error) {
       toast.error("Something went wrong. Please try again or contact us directly.");
       console.error("EmailJS error:", error);
@@ -138,17 +145,6 @@ export default function Contact() {
                     </a>
                   </div>
                 </div>
-              </div>
-
-              <div className="mt-12 p-6 bg-white/5">
-                <h3 className="text-lg mb-2">Business Hours</h3>
-                <p className="text-sm text-gray-400">
-                  Monday - Friday: 9:00 AM - 6:00 PM
-                  <br />
-                  Saturday: 10:00 AM - 4:00 PM
-                  <br />
-                  Sunday: By appointment only
-                </p>
               </div>
             </div>
 
@@ -243,17 +239,40 @@ export default function Contact() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="shootDate" className="block text-sm mb-2">
+                    <label className="block text-sm mb-2">
                       Preferred Shoot Date
                     </label>
-                    <input
-                      type="date"
-                      id="shootDate"
-                      name="shootDate"
-                      value={formData.shootDate}
-                      onChange={handleChange}
-                      className="w-full bg-white/5 border border-white/10 px-4 py-3 focus:outline-none focus:border-white/30 transition-colors"
-                    />
+                    <Popover open={calendarOpen} onOpenChange={setCalendarOpen}>
+                      <PopoverTrigger asChild>
+                        <button
+                          type="button"
+                          className="w-full bg-white/5 border border-white/10 px-4 py-3 text-left flex items-center justify-between hover:border-white/30 transition-colors focus:outline-none focus:border-white/30"
+                        >
+                          <span className={selectedDate ? "text-white" : "text-gray-500"}>
+                            {selectedDate ? format(selectedDate, "PPP") : "Pick a date"}
+                          </span>
+                          <CalendarIcon size={16} className="text-gray-400" />
+                        </button>
+                      </PopoverTrigger>
+                      <PopoverContent className="w-auto p-0 border border-white/20 shadow-xl" align="start">
+                        <div className="dark">
+                          <Calendar
+                            mode="single"
+                            selected={selectedDate}
+                            onSelect={(date) => {
+                              setSelectedDate(date);
+                              setFormData((prev) => ({
+                                ...prev,
+                                shootDate: date ? format(date, "yyyy-MM-dd") : "",
+                              }));
+                              setCalendarOpen(false);
+                            }}
+                            disabled={{ before: new Date() }}
+                            initialFocus
+                          />
+                        </div>
+                      </PopoverContent>
+                    </Popover>
                   </div>
 
                   <div>
