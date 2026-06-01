@@ -33,8 +33,8 @@ export default function Contact() {
 
     try {
       await emailjs.send(
-        "service_mu22k2o",
-        "template_gztroo6",
+        "service_va5og2d",
+        "template_lwobf3r",
         {
           name: formData.name,
           email: formData.email,
@@ -45,7 +45,7 @@ export default function Contact() {
           shootLocation: formData.shootLocation,
           message: formData.message,
         },
-        "p8_vXqkMIdqEuyfhW"
+        "NwFD_cV4pjkswRfvm"
       );
 
       toast.success("Inquiry sent successfully! We'll get back to you within 24 hours.");
