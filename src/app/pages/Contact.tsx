@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useLocation } from "react-router";
 import { Mail, Phone, Instagram, MapPin } from "lucide-react";
 import { toast } from "sonner";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const location = useLocation();
@@ -18,25 +19,47 @@ export default function Contact() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSending, setIsSending] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Mock email sending - in production this would send to an API
-    console.log("Form submitted:", formData);
-    
-    toast.success("Inquiry sent successfully! We'll get back to you within 24 hours.");
-    
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      projectType: "",
-      carInterest: "",
-      shootDate: "",
-      shootLocation: "",
-      message: "",
-    });
+    setIsSending(true);
+
+    try {
+      await emailjs.send(
+        "service_mu22k2o",
+        "template_gztroo6",
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          projectType: formData.projectType,
+          carInterest: formData.carInterest,
+          shootDate: formData.shootDate,
+          shootLocation: formData.shootLocation,
+          message: formData.message,
+        },
+        "p8_vXqkMIdqEuyfhW"
+      );
+
+      toast.success("Inquiry sent successfully! We'll get back to you within 24 hours.");
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        projectType: "",
+        carInterest: "",
+        shootDate: "",
+        shootLocation: "",
+        message: "",
+      });
+    } catch (error) {
+      toast.error("Something went wrong. Please try again or contact us directly.");
+      console.error("EmailJS error:", error);
+    } finally {
+      setIsSending(false);
+    }
   };
 
   const handleChange = (
@@ -280,9 +303,10 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="w-full bg-white text-black px-8 py-4 uppercase text-sm tracking-wider hover:bg-gray-200 transition-colors"
+                  disabled={isSending}
+                  className="w-full bg-white text-black px-8 py-4 uppercase text-sm tracking-wider hover:bg-gray-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Submit Inquiry
+                  {isSending ? "Sending..." : "Submit Inquiry"}
                 </button>
 
                 <p className="text-sm text-gray-400 text-center">
