@@ -101,8 +101,8 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl text-center mb-12 tracking-tight">
             Our Partners
           </h2>
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-8 items-center">
-            {["Ferrari", "Lamborghini", "Bugatti", "Bentley", "Porsche", "Rolls-Royce"].map((brand) => (
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-7 items-center">
+            {["Ferrari", "Lamborghini","Rolls-Royce", "Cadillac", "Mercedez-Benz", "Acura"].map((brand) => (
               <div key={brand} className="text-center opacity-60 hover:opacity-100 transition-all duration-300 cursor-pointer">
                 <p className="text-lg uppercase tracking-widest hover:font-bold hover:text-white">{brand}</p>
               </div>
