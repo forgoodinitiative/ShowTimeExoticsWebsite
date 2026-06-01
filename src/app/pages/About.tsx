@@ -19,9 +19,9 @@ export default function About() {
           <h2 className="text-3xl md:text-4xl mb-8 tracking-tight">Our Story</h2>
           <div className="space-y-4 text-gray-400 leading-relaxed">
             <p>
-              ShowtimExotics was founded with a simple yet powerful vision: to provide
+              ShowtimExotics was founded with a simple vision to provide
               content creators, photographers, videographers, and event planners access to
-              the world's most stunning luxury vehicles for their creative projects.
+              the our most stunning luxury vehicles for their creative projects.
             </p>
             <p>
               Based in Vancouver, BC, we've built a curated collection of exotic and luxury
@@ -29,7 +29,7 @@ export default function About() {
               real estate marketing, and high-end content creation.
             </p>
             <p>
-              Our vehicles aren't just cars—they're pieces of automotive art that elevate
+              Our vehicles are pieces of automotive art that elevate
               your creative vision and help tell your story. From Italian supercars to
               British luxury sedans, each vehicle in our fleet has been carefully selected
               for its visual impact and photogenic qualities.
