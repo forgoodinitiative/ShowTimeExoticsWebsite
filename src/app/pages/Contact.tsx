@@ -45,7 +45,6 @@ export default function Contact() {
           shootLocation: formData.shootLocation,
           message: formData.message,
         },
-        "NwFD_cV4pjkswRfvm"
       );
 
       toast.success("Inquiry sent successfully! We'll get back to you within 24 hours.");
