@@ -5,7 +5,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
 import AdminDashboard from "./pages/AdminDashboard";
-import RootLayout from "./components/RootLayout";
+
 
 export const router = createBrowserRouter([
   {
