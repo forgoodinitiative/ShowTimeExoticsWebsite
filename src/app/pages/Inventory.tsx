@@ -13,16 +13,24 @@ const heroSlides = [
 
 export default function Inventory() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  // Bumped on every manual selection so the timer resets even when the active slide is re-selected
+  const [slideSelection, setSlideSelection] = useState(0);
   const [sortAZ, setSortAZ] = useState(true);
   const [selectedCar, setSelectedCar] = useState<Car | null>(null);
   const [modalImageIndex, setModalImageIndex] = useState(0);
 
+  // Restart the countdown whenever the slide changes, manually or automatically
   useEffect(() => {
-    const timer = setInterval(() => {
+    const timer = setTimeout(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
     }, 4000);
-    return () => clearInterval(timer);
-  }, []);
+    return () => clearTimeout(timer);
+  }, [currentSlide, slideSelection]);
+
+  const selectSlide = (i: number) => {
+    setCurrentSlide(i);
+    setSlideSelection((n) => n + 1);
+  };
 
   // Reset image index when a different car is opened
   const openModal = (car: Car) => {
@@ -95,7 +103,7 @@ export default function Inventory() {
             {heroSlides.map((_, i) => (
               <button
                 key={i}
-                onClick={() => setCurrentSlide(i)}
+                onClick={() => selectSlide(i)}
                 className={`w-2 h-2 rounded-full transition-colors ${i === currentSlide ? "bg-white" : "bg-white/30 hover:bg-white/60"}`}
               />
             ))}
