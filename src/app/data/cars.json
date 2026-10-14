@@ -1,0 +1,118 @@
+[
+  {
+    "id": "rolls-royce-cullinan",
+    "brand": "Rolls-Royce",
+    "model": "Cullinan",
+    "BodyStyle": "Widebody SUV",
+    "imageFolder": "Rolls_Royce_Cullinan_Widebody",
+    "coverImage": "cullinan.jpg",
+    "available": true
+  },
+  {
+    "id": "ferrari-458-italia",
+    "brand": "Ferrari",
+    "model": "458",
+    "Trim": "Italia",
+    "BodyStyle": "Coupe",
+    "ExteriorColor": "Bianco Avus",
+    "imageFolder": "Ferrari_458_Italia",
+    "available": true
+  },
+  {
+    "id": "lamborghini-huracan-evo",
+    "brand": "Lamborghini",
+    "model": "Huracan",
+    "Trim": "EVO",
+    "BodyStyle": "Coupe",
+    "InteriorColor": "Bianco Polar",
+    "imageFolder": "Lamborghini_Huracan_Evo",
+    "available": true
+  },
+  {
+    "id": "ferrari-488-spider",
+    "brand": "Ferrari",
+    "model": "488",
+    "Trim": "Spider",
+    "BodyStyle": "Convertible",
+    "ExteriorColor": "Bianco Avus",
+    "InteriorColor": "Red",
+    "imageFolder": "Ferrari_488_Spider",
+    "available": true
+  },
+  {
+    "id": "lamborghini-urus",
+    "brand": "Lamborghini",
+    "model": "Urus",
+    "BodyStyle": "Novitech WideBody SUV",
+    "ExteriorColor": "Bianco Monocerus",
+    "imageFolder": "Lamborghini_Urus_Widebody",
+    "available": true
+  },
+  {
+    "id": "cadillac-escalade-v",
+    "brand": "Cadillac",
+    "model": "Escalade",
+    "Trim": "V",
+    "BodyStyle": "SUV",
+    "ExteriorColor": "Satin Black",
+    "imageFolder": "Cadillac_Escalade_V",
+    "available": true
+  },
+  {
+    "id": "lamborghini-aventador-s",
+    "brand": "Lamborghini",
+    "model": "Aventador",
+    "Trim": "S",
+    "BodyStyle": "Roadster",
+    "ExteriorColor": "Nero Noctis",
+    "StandoutFeatures": "Butterfly Doors",
+    "imageFolder": "Lamborghini_Aventador_Roadster",
+    "available": true
+  },
+  {
+    "id": "audi-r8-spyder",
+    "brand": "Audi",
+    "model": "R8",
+    "Trim": "Spyder",
+    "BodyStyle": "Convertible",
+    "ExteriorColor": "Sepang Blue",
+    "imageFolder": "Audi_R8_Spyder",
+    "available": true
+  },
+  {
+    "id": "rolls-royce-phantom",
+    "brand": "Rolls-Royce",
+    "model": "Phantom",
+    "BodyStyle": "Saloon",
+    "ExteriorColor": "Arctic White",
+    "imageFolder": "Rolls_Royce_Phantom",
+    "available": true
+  },
+  {
+    "id": "land-rover-range-rover",
+    "brand": "Land Rover",
+    "model": "Range Rover",
+    "BodyStyle": "SUV",
+    "ExteriorColor": "Estoril Blue",
+    "imageFolder": "Land_Rover_Range_Rover",
+    "available": true
+  },
+  {
+    "id": "mercedes-benz-g63",
+    "brand": "Mercedes-Benz",
+    "model": "G63",
+    "BodyStyle": "SUV",
+    "ExteriorColor": "Gloss Black",
+    "imageFolder": "Mercedes_Benz_G63_AMG",
+    "available": true
+  },
+  {
+    "id": "acura-nsx",
+    "brand": "Acura",
+    "model": "NSX",
+    "BodyStyle": "Coupe",
+    "ExteriorColor": "White",
+    "imageFolder": "Acura_NSX",
+    "available": true
+  }
+]
