@@ -95,11 +95,11 @@ export default function Home() {
         </button>
       </section>
 
-      {/* Our Partners Section */}
+      {/* Our Fleet Section */}
       <section className="py-20 border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl text-center mb-12 tracking-tight">
-            Our Partners
+            Our Fleet
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-6 gap-7 items-center">
             {["Ferrari", "Lamborghini","Rolls-Royce", "Cadillac", "Mercedes-Benz", "Acura"].map((brand) => (
@@ -179,7 +179,7 @@ export default function Home() {
             rel="noopener noreferrer"
             className="text-3xl md:text-4xl hover:text-gray-400 transition-colors"
           >
-            @ShowtimExotics
+            @showtimexotics
           </a>
         </div>
       </section>

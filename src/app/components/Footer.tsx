@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <h3 className="text-xl tracking-wider uppercase mb-4">ShowtimExotics</h3>
+            <h3 className="text-xl tracking-wider uppercase mb-4">SHOWTIMEXOTICS</h3>
             <p className="text-gray-400 text-sm">
               Luxury vehicles for your creative vision.
             </p>
@@ -61,14 +61,14 @@ export default function Footer() {
                 className="flex items-center space-x-2 text-gray-400 hover:text-white text-sm transition-colors"
               >
                 <Instagram size={16} />
-                <span>@ShowtimExotics</span>
+                <span>@showtimexotics</span>
               </a>
             </div>
           </div>
         </div>
 
         <div className="mt-8 pt-8 border-t border-white/10 text-center text-gray-400 text-sm">
-          <p>&copy; {new Date().getFullYear()} ShowtimExotics. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} SHOWTIMEXOTICS. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -34,7 +34,7 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
           {Math.floor(progress)}
         </div>
         <div className="text-sm uppercase tracking-widest text-gray-400">
-          ShowtimExotics
+          SHOWTIMEXOTICS
         </div>
         
         {/* Progress bar */}

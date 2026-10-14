@@ -140,7 +140,7 @@ export default function Contact() {
                       rel="noopener noreferrer"
                       className="hover:text-gray-300 transition-colors"
                     >
-                      @ShowtimExotics
+                      @showtimexotics
                     </a>
                   </div>
                 </div>
@@ -314,7 +314,7 @@ export default function Contact() {
                     className="mt-1"
                   />
                   <label htmlFor="agree" className="text-sm text-gray-400">
-                    I understand that ShowtimExotics provides vehicles for static photoshoots
+                    I understand that SHOWTIMEXOTICS provides vehicles for static photoshoots
                     only (no driving) and agree to the rental terms and conditions.
                   </label>
                 </div>
