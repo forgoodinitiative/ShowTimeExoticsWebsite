@@ -89,17 +89,6 @@
     "available": true
   },
   {
-    "id": "ferrari-488-spider",
-    "brand": "Ferrari",
-    "model": "488",
-    "Trim": "Spider",
-    "BodyStyle": "Convertible",
-    "ExteriorColor": "Bianco Avus",
-    "InteriorColor": "Red",
-    "imageFolder": "Ferrari_488_Spider",
-    "available": true
-  },
-  {
     "id": "lamborghini-aventador-s",
     "brand": "Lamborghini",
     "model": "Aventador",
