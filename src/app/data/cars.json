@@ -1,12 +1,72 @@
 [
   {
+    "id": "ferrari-f8-tributo-purple",
+    "brand": "Ferrari",
+    "model": "F8 Tributo",
+    "BodyStyle": "Coupe",
+    "ExteriorColor": "Purple",
+    "imageFolder": "Ferrari_F8_Tributo_Purple",
+    "available": true,
+    "priority": 1
+  },
+  {
     "id": "rolls-royce-cullinan",
     "brand": "Rolls-Royce",
     "model": "Cullinan",
     "BodyStyle": "Widebody SUV",
     "imageFolder": "Rolls_Royce_Cullinan_Widebody",
     "coverImage": "cullinan.jpg",
-    "available": true
+    "available": true,
+    "priority": 2
+  },
+  {
+    "id": "lamborghini-urus-performante",
+    "brand": "Lamborghini",
+    "model": "Urus Performante",
+    "BodyStyle": "Widebody SUV",
+    "imageFolder": "Urus_Performante_WB",
+    "available": true,
+    "priority": 3
+  },
+  {
+    "id": "porsche-911-turbo-cabriolet",
+    "brand": "Porsche",
+    "model": "911 Turbo Cabriolet",
+    "BodyStyle": "Convertible",
+    "imageFolder": "Porsche_911_Cabriolet",
+    "available": true,
+    "priority": 4
+  },
+  {
+    "id": "lamborghini-urus",
+    "brand": "Lamborghini",
+    "model": "Urus",
+    "BodyStyle": "Novitech WideBody SUV",
+    "ExteriorColor": "Bianco Monocerus",
+    "imageFolder": "Lamborghini_Urus_Widebody",
+    "available": true,
+    "priority": 5
+  },
+  {
+    "id": "ferrari-f8-tributo-red",
+    "brand": "Ferrari",
+    "model": "F8 Tributo",
+    "BodyStyle": "Coupe",
+    "ExteriorColor": "Red",
+    "imageFolder": "Ferrari_F8_Tributo_Red",
+    "available": true,
+    "priority": 6
+  },
+  {
+    "id": "cadillac-escalade-v",
+    "brand": "Cadillac",
+    "model": "Escalade",
+    "Trim": "V",
+    "BodyStyle": "SUV",
+    "ExteriorColor": "Satin Black",
+    "imageFolder": "Cadillac_Escalade_V",
+    "available": true,
+    "priority": 7
   },
   {
     "id": "ferrari-458-italia",
@@ -37,25 +97,6 @@
     "ExteriorColor": "Bianco Avus",
     "InteriorColor": "Red",
     "imageFolder": "Ferrari_488_Spider",
-    "available": true
-  },
-  {
-    "id": "lamborghini-urus",
-    "brand": "Lamborghini",
-    "model": "Urus",
-    "BodyStyle": "Novitech WideBody SUV",
-    "ExteriorColor": "Bianco Monocerus",
-    "imageFolder": "Lamborghini_Urus_Widebody",
-    "available": true
-  },
-  {
-    "id": "cadillac-escalade-v",
-    "brand": "Cadillac",
-    "model": "Escalade",
-    "Trim": "V",
-    "BodyStyle": "SUV",
-    "ExteriorColor": "Satin Black",
-    "imageFolder": "Cadillac_Escalade_V",
     "available": true
   },
   {

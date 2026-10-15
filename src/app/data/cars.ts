@@ -23,6 +23,8 @@ export interface Car {
   description?: string;
   category?: string;
   rate?: string;
+  // lower = pinned higher; omit to fall into alphabetical section
+  priority?: number;
 }
 
 export const cars: Car[] = data.map(({ imageFolder, coverImage, ...car }: (typeof data)[number] & { coverImage?: string }) => {
