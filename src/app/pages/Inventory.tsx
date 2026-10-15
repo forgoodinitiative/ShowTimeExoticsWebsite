@@ -6,9 +6,9 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 const heroSlides = [
   { type: "video" as const, src: rarrduoVideo, label: "ShowTime Exotics" },
-  { type: "car" as const, carId: "lamborghini-huracan-evo", label: "Lamborghini Huracán" },
-  { type: "car" as const, carId: "acura-nsx", label: "Acura NSX" },
-  { type: "car" as const, carId: "cadillac-escalade-v", label: "Cadillac Escalade V" },
+  { type: "car" as const, carId: "ferrari-f8-tributo-purple", label: "Ferrari F8 Tributo" },
+  { type: "car" as const, carId: "rolls-royce-cullinan", label: "Rolls-Royce Cullinan" },
+  { type: "car" as const, carId: "lamborghini-aventador-s", label: "Lamborghini Aventador S" },
 ];
 
 export default function Inventory() {
