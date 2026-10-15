@@ -47,6 +47,9 @@ export default function Inventory() {
     setModalImageIndex((i) => (i + 1) % (selectedCar?.images.length ?? 1));
 
   const sortedCars = [...cars].sort((a, b) => {
+    const pinA = a.priority ?? Infinity; // unpinned cars sink below all pinned ones
+    const pinB = b.priority ?? Infinity;
+    if (pinA !== pinB) return pinA - pinB;
     const nameA = `${a.brand} ${a.model}`.toLowerCase();
     const nameB = `${b.brand} ${b.model}`.toLowerCase();
     return sortAZ ? nameA.localeCompare(nameB) : nameB.localeCompare(nameA);
