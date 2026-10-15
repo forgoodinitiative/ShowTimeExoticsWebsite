@@ -6,9 +6,9 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 const heroSlides = [
   { type: "video" as const, src: rarrduoVideo, label: "ShowTime Exotics" },
-  { type: "car" as const, carId: "3", label: "Lamborghini Huracán" },
-  { type: "car" as const, carId: "17", label: "Acura NSX" },
-  { type: "car" as const, carId: "7", label: "Cadillac Escalade V" },
+  { type: "car" as const, carId: "ferrari-f8-tributo-purple", label: "Ferrari F8 Tributo", objectPosition: "center 60%" },
+  { type: "car" as const, carId: "cadillac-escalade-v", label: "Cadillac Escalade V", objectPosition: "center 54%" },
+  { type: "car" as const, carId: "lamborghini-urus", label: "Lamborghini Urus", objectPosition: "center 50%" },
 ];
 
 export default function Inventory() {
@@ -47,6 +47,9 @@ export default function Inventory() {
     setModalImageIndex((i) => (i + 1) % (selectedCar?.images.length ?? 1));
 
   const sortedCars = [...cars].sort((a, b) => {
+    const pinA = a.priority ?? Infinity; // unpinned cars sink below all pinned ones
+    const pinB = b.priority ?? Infinity;
+    if (pinA !== pinB) return pinA - pinB;
     const nameA = `${a.brand} ${a.model}`.toLowerCase();
     const nameB = `${b.brand} ${b.model}`.toLowerCase();
     return sortAZ ? nameA.localeCompare(nameB) : nameB.localeCompare(nameA);
@@ -68,7 +71,7 @@ export default function Inventory() {
   return (
     <div className="pt-20">
       {/* Hero Slideshow */}
-      <section className="relative h-[70vh] overflow-hidden bg-black">
+      <section className="relative h-[70vh] w-full overflow-hidden bg-black">
         {heroSlides.map((slide, i) => {
           const isActive = i === currentSlide;
           if (slide.type === "video") {
@@ -89,7 +92,7 @@ export default function Inventory() {
               className={`absolute inset-0 transition-opacity duration-1000 ${isActive ? "opacity-100" : "opacity-0"}`}
             >
               {car?.image ? (
-                <img src={car.image} alt={slide.label} className="w-full h-full object-cover" />
+                <img src={car.image} alt={slide.label} className="w-full h-full object-cover" style={{ objectPosition: slide.objectPosition ?? "center 50%" }} />
               ) : (
                 <div className="w-full h-full bg-zinc-900" />
               )}

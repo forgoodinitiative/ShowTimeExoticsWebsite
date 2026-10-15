@@ -116,7 +116,9 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl mb-12 tracking-tight">Inventory</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            {cars.slice(0, 3).map((car) => (
+            {["ferrari-f8-tributo-purple", "lamborghini-huracan-evo", "lamborghini-urus-performante"]
+              .map((id) => cars.find((c) => c.id === id)!)
+              .map((car) => (
               <button
                 key={car.id}
                 onClick={() => openModal(car)}
