@@ -38,7 +38,7 @@
     "priority": 4
   },
   {
-    "id": "lamborghini-urus",
+    "id": "lamborghini-urus-widebody",
     "brand": "Lamborghini",
     "model": "Urus Widebody",
     "BodyStyle": "Novitech WideBody SUV",
@@ -89,10 +89,9 @@
     "available": true
   },
   {
-    "id": "lamborghini-aventador-s",
+    "id": "lamborghini-aventador",
     "brand": "Lamborghini",
     "model": "Aventador",
-    "Trim": "S",
     "BodyStyle": "Roadster",
     "ExteriorColor": "Nero Noctis",
     "StandoutFeatures": "Butterfly Doors",
@@ -143,6 +142,25 @@
     "BodyStyle": "Coupe",
     "ExteriorColor": "White",
     "imageFolder": "Acura_NSX",
+    "available": true
+  },
+  {
+    "id": "ferrari-488-gtb",
+    "brand": "Ferrari",
+    "model": "488 GTB",
+    "BodyStyle": "Coupe",
+    "ExteriorColor": "White",
+    "imageFolder": "Ferrari_488_GTB_White",
+    "available": true
+  },
+  {
+    "id": "lamborghini-aventador-s-black",
+    "brand": "Lamborghini",
+    "model": "Aventador",
+    "Trim": "S",
+    "BodyStyle": "Roadster",
+    "ExteriorColor": "Black",
+    "imageFolder": "Lamborghini_Aventador_S_Black",
     "available": true
   }
 ]
