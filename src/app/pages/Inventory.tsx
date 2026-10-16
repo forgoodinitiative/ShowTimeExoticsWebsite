@@ -5,10 +5,10 @@ import rarrduoVideo from "../../images/rarriduo.mp4";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 const heroSlides = [
-  { type: "video" as const, src: rarrduoVideo, label: "ShowTime Exotics" },
+  { type: "video" as const, src: rarrduoVideo, label: "SHOWTIMEXOTICS" },
   { type: "car" as const, carId: "ferrari-f8-tributo-purple", label: "Ferrari F8 Tributo", objectPosition: "center 60%" },
-  { type: "car" as const, carId: "cadillac-escalade-v", label: "Cadillac Escalade V", objectPosition: "center 54%" },
-  { type: "car" as const, carId: "lamborghini-urus", label: "Lamborghini Urus Widebody", objectPosition: "center 50%" },
+  { type: "car" as const, carId: "lamborghini-aventador-s-black", label: "Lamborghini Aventador S", objectPosition: "center 54%" },
+  { type: "car" as const, carId: "lamborghini-urus-widebody", label: "Lamborghini Urus Widebody", objectPosition: "center 50%" },
 ];
 
 export default function Inventory() {
@@ -65,7 +65,6 @@ export default function Inventory() {
         ...(selectedCar.BodyStyle && selectedCar.BodyStyle !== "N/A" ? [{ label: "Body", value: selectedCar.BodyStyle }] : []),
         ...(selectedCar.ExteriorColor && selectedCar.ExteriorColor !== "N/A" ? [{ label: "Exterior", value: selectedCar.ExteriorColor }] : []),
         ...(selectedCar.InteriorColor && selectedCar.InteriorColor !== "N/A" ? [{ label: "Interior", value: selectedCar.InteriorColor }] : []),
-        ...(selectedCar.StandoutFeatures && selectedCar.StandoutFeatures !== "N/A" ? [{ label: "Features", value: selectedCar.StandoutFeatures }] : []),
       ]
     : [];
 

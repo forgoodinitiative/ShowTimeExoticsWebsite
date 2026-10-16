@@ -7,6 +7,7 @@
     "ExteriorColor": "Purple",
     "imageFolder": "Ferrari_F8_Tributo_Purple",
     "available": true,
+    "Trim": "Coupe",
     "priority": 1
   },
   {
@@ -17,16 +18,20 @@
     "imageFolder": "Rolls_Royce_Cullinan_Widebody",
     "coverImage": "cullinan.jpg",
     "available": true,
+    "ExteriorColor": "White",
+    "Trim": "Starlight Edition",
     "priority": 2
   },
   {
     "id": "lamborghini-urus-performante",
     "brand": "Lamborghini",
-    "model": "Urus Performante",
+    "model": "Urus",
     "BodyStyle": "Widebody SUV",
     "imageFolder": "Urus_Performante_WB",
     "available": true,
-    "priority": 3
+    "ExteriorColor": "Black",
+    "Trim": "Performante",
+    "priority": 7
   },
   {
     "id": "porsche-911-turbo-cabriolet",
@@ -35,6 +40,8 @@
     "BodyStyle": "Convertible",
     "imageFolder": "Porsche_911_Cabriolet",
     "available": true,
+    "Trim": "992.1",
+    "ExteriorColor": "Black",
     "priority": 4
   },
   {
@@ -45,6 +52,7 @@
     "ExteriorColor": "Bianco Monocerus",
     "imageFolder": "Lamborghini_Urus_Widebody",
     "available": true,
+    "Trim": "Novitec Esteso",
     "priority": 5
   },
   {
@@ -55,6 +63,7 @@
     "ExteriorColor": "Red",
     "imageFolder": "Ferrari_F8_Tributo_Red",
     "available": true,
+    "Trim": "Coupe",
     "priority": 6
   },
   {
@@ -65,8 +74,7 @@
     "BodyStyle": "SUV",
     "ExteriorColor": "Satin Black",
     "imageFolder": "Cadillac_Escalade_V",
-    "available": true,
-    "priority": 7
+    "available": true
   },
   {
     "id": "ferrari-458-italia",
@@ -86,7 +94,8 @@
     "BodyStyle": "Coupe",
     "InteriorColor": "Bianco Polar",
     "imageFolder": "Lamborghini_Huracan_Evo",
-    "available": true
+    "available": true,
+    "ExteriorColor": "Matte Black"
   },
   {
     "id": "lamborghini-aventador",
@@ -94,9 +103,9 @@
     "model": "Aventador",
     "BodyStyle": "Roadster",
     "ExteriorColor": "Nero Noctis",
-    "StandoutFeatures": "Butterfly Doors",
     "imageFolder": "Lamborghini_Aventador_Roadster",
-    "available": true
+    "available": true,
+    "Trim": "LP700-4"
   },
   {
     "id": "audi-r8-spyder",
@@ -115,7 +124,8 @@
     "BodyStyle": "Saloon",
     "ExteriorColor": "Arctic White",
     "imageFolder": "Rolls_Royce_Phantom",
-    "available": true
+    "available": true,
+    "Trim": "VIII"
   },
   {
     "id": "land-rover-range-rover",
@@ -124,7 +134,8 @@
     "BodyStyle": "SUV",
     "ExteriorColor": "Estoril Blue",
     "imageFolder": "Land_Rover_Range_Rover",
-    "available": true
+    "available": true,
+    "Trim": "Autobiography"
   },
   {
     "id": "mercedes-benz-g63",
@@ -133,7 +144,8 @@
     "BodyStyle": "SUV",
     "ExteriorColor": "Gloss Black",
     "imageFolder": "Mercedes_Benz_G63_AMG",
-    "available": true
+    "available": true,
+    "Trim": "AMG"
   },
   {
     "id": "acura-nsx",
@@ -142,7 +154,8 @@
     "BodyStyle": "Coupe",
     "ExteriorColor": "White",
     "imageFolder": "Acura_NSX",
-    "available": true
+    "available": true,
+    "Trim": "Type S"
   },
   {
     "id": "ferrari-488-gtb",
@@ -151,7 +164,9 @@
     "BodyStyle": "Coupe",
     "ExteriorColor": "White",
     "imageFolder": "Ferrari_488_GTB_White",
-    "available": true
+    "available": true,
+    "Trim": "Coupe",
+    "priority": 9
   },
   {
     "id": "lamborghini-aventador-s-black",
@@ -161,6 +176,19 @@
     "BodyStyle": "Roadster",
     "ExteriorColor": "Black",
     "imageFolder": "Lamborghini_Aventador_S_Black",
-    "available": true
+    "available": true,
+    "priority": 3
+  },
+  {
+    "id": "lamborghini-urus-black",
+    "brand": "Lamborghini",
+    "model": "Urus",
+    "Trim": "S",
+    "BodyStyle": "SUV",
+    "ExteriorColor": "Black",
+    "InteriorColor": "Red",
+    "imageFolder": "Lamborghini_Urus_Black",
+    "available": true,
+    "priority": 8
   }
 ]

@@ -18,7 +18,6 @@ export interface Car {
   InteriorColor?: string;
   image: string;
   images: string[];
-  StandoutFeatures?: string;
   available: boolean;
   description?: string;
   category?: string;
