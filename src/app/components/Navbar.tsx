@@ -27,7 +27,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <span className="text-2xl tracking-wider uppercase">SHOWTIMEXOTICS</span>
+            <span className="text-xl sm:text-2xl tracking-wider uppercase">SHOWTIMEXOTICS</span>
           </Link>
 
           {/* Desktop Navigation */}

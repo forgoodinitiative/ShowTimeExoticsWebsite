@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap');
 
+@font-face {
+  font-family: 'Engravers MT';
+  src: url('/fonts/EngraversMT.woff2') format('woff2'),
+       url('/fonts/EngraversMT.woff') format('woff');
+  font-display: swap;
+}
+
 body {
-  /* Engravers MT if installed locally (not web-licensed); Cinzel is the free web stand-in */
-  font-family: 'Engravers MT', 'Cinzel', 'Copperplate', serif;
+  font-family: 'Engravers MT', 'Cinzel', serif;
 }

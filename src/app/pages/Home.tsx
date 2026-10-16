@@ -179,7 +179,7 @@ export default function Home() {
             href="https://www.instagram.com/showtimexotics"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-3xl md:text-4xl hover:text-gray-400 transition-colors"
+            className="text-2xl sm:text-3xl md:text-4xl hover:text-gray-400 transition-colors"
           >
             @showtimexotics
           </a>
