@@ -8,7 +8,7 @@ const heroSlides = [
   { type: "video" as const, src: rarrduoVideo, label: "ShowTime Exotics" },
   { type: "car" as const, carId: "ferrari-f8-tributo-purple", label: "Ferrari F8 Tributo", objectPosition: "center 60%" },
   { type: "car" as const, carId: "cadillac-escalade-v", label: "Cadillac Escalade V", objectPosition: "center 54%" },
-  { type: "car" as const, carId: "lamborghini-urus", label: "Lamborghini Urus", objectPosition: "center 50%" },
+  { type: "car" as const, carId: "lamborghini-urus", label: "Lamborghini Urus Widebody", objectPosition: "center 50%" },
 ];
 
 export default function Inventory() {

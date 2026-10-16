@@ -12,7 +12,7 @@
   {
     "id": "rolls-royce-cullinan",
     "brand": "Rolls-Royce",
-    "model": "Cullinan",
+    "model": "Cullinan Widebody",
     "BodyStyle": "Widebody SUV",
     "imageFolder": "Rolls_Royce_Cullinan_Widebody",
     "coverImage": "cullinan.jpg",
@@ -40,7 +40,7 @@
   {
     "id": "lamborghini-urus",
     "brand": "Lamborghini",
-    "model": "Urus",
+    "model": "Urus Widebody",
     "BodyStyle": "Novitech WideBody SUV",
     "ExteriorColor": "Bianco Monocerus",
     "imageFolder": "Lamborghini_Urus_Widebody",
