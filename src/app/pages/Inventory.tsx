@@ -124,16 +124,12 @@ export default function Inventory() {
               Browse our collection of luxury vehicles available for static photoshoots and content creation. Click any car to see details.
             </p>
           </div>
-          <select
-            value={sort}
-            onChange={(e) => setSort(e.target.value as typeof sort)}
-            aria-label="Sort cars"
-            className="px-6 py-2 bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white text-sm uppercase tracking-wider transition-colors cursor-pointer"
+          <button
+            onClick={() => setSort((prev) => (prev === "relevant" ? "az" : prev === "az" ? "za" : "relevant"))}
+            className="px-6 py-2 bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white text-sm uppercase tracking-wider transition-colors"
           >
-            <option value="relevant" className="bg-black">Sort: Most Relevant</option>
-            <option value="az" className="bg-black">Sort: A → Z</option>
-            <option value="za" className="bg-black">Sort: Z → A</option>
-          </select>
+            Sort: {sort === "relevant" ? "Most Relevant" : sort === "az" ? "A → Z" : "Z → A"}
+          </button>
         </div>
       </section>
 
