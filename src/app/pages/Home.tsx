@@ -51,7 +51,6 @@ export default function Home() {
         ...(selectedCar.BodyStyle && selectedCar.BodyStyle !== "N/A" ? [{ label: "Body", value: selectedCar.BodyStyle }] : []),
         ...(selectedCar.ExteriorColor && selectedCar.ExteriorColor !== "N/A" ? [{ label: "Exterior", value: selectedCar.ExteriorColor }] : []),
         ...(selectedCar.InteriorColor && selectedCar.InteriorColor !== "N/A" ? [{ label: "Interior", value: selectedCar.InteriorColor }] : []),
-        ...(selectedCar.StandoutFeatures && selectedCar.StandoutFeatures !== "N/A" ? [{ label: "Features", value: selectedCar.StandoutFeatures }] : []),
       ]
     : [];
 

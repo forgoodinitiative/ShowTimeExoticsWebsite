@@ -5,17 +5,17 @@ import rarrduoVideo from "../../images/rarriduo.mp4";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 const heroSlides = [
-  { type: "video" as const, src: rarrduoVideo, label: "ShowTime Exotics" },
+  { type: "video" as const, src: rarrduoVideo, label: "SHOWTIMEXOTICS" },
   { type: "car" as const, carId: "ferrari-f8-tributo-purple", label: "Ferrari F8 Tributo", objectPosition: "center 60%" },
-  { type: "car" as const, carId: "cadillac-escalade-v", label: "Cadillac Escalade V", objectPosition: "center 54%" },
-  { type: "car" as const, carId: "lamborghini-urus", label: "Lamborghini Urus", objectPosition: "center 50%" },
+  { type: "car" as const, carId: "lamborghini-aventador-s-black", label: "Lamborghini Aventador S", objectPosition: "center 60%" },
+  { type: "car" as const, carId: "lamborghini-urus-widebody", label: "Lamborghini Urus Widebody", objectPosition: "center 50%" },
 ];
 
 export default function Inventory() {
   const [currentSlide, setCurrentSlide] = useState(0);
   // Bumped on every manual selection so the timer resets even when the active slide is re-selected
   const [slideSelection, setSlideSelection] = useState(0);
-  const [sortAZ, setSortAZ] = useState(true);
+  const [sort, setSort] = useState<"relevant" | "az" | "za">("relevant");
   const [selectedCar, setSelectedCar] = useState<Car | null>(null);
   const [modalImageIndex, setModalImageIndex] = useState(0);
 
@@ -47,12 +47,13 @@ export default function Inventory() {
     setModalImageIndex((i) => (i + 1) % (selectedCar?.images.length ?? 1));
 
   const sortedCars = [...cars].sort((a, b) => {
-    const pinA = a.priority ?? Infinity; // unpinned cars sink below all pinned ones
-    const pinB = b.priority ?? Infinity;
-    if (pinA !== pinB) return pinA - pinB;
-    const nameA = `${a.brand} ${a.model}`.toLowerCase();
-    const nameB = `${b.brand} ${b.model}`.toLowerCase();
-    return sortAZ ? nameA.localeCompare(nameB) : nameB.localeCompare(nameA);
+    if (sort === "relevant") {
+      const pinA = a.priority ?? Infinity; // unpinned cars sink below all pinned ones
+      const pinB = b.priority ?? Infinity;
+      if (pinA !== pinB) return pinA - pinB;
+    }
+    const byName = `${a.brand} ${a.model}`.localeCompare(`${b.brand} ${b.model}`);
+    return sort === "za" ? -byName : byName;
   });
 
   const specs = selectedCar
@@ -64,7 +65,6 @@ export default function Inventory() {
         ...(selectedCar.BodyStyle && selectedCar.BodyStyle !== "N/A" ? [{ label: "Body", value: selectedCar.BodyStyle }] : []),
         ...(selectedCar.ExteriorColor && selectedCar.ExteriorColor !== "N/A" ? [{ label: "Exterior", value: selectedCar.ExteriorColor }] : []),
         ...(selectedCar.InteriorColor && selectedCar.InteriorColor !== "N/A" ? [{ label: "Interior", value: selectedCar.InteriorColor }] : []),
-        ...(selectedCar.StandoutFeatures && selectedCar.StandoutFeatures !== "N/A" ? [{ label: "Features", value: selectedCar.StandoutFeatures }] : []),
       ]
     : [];
 
@@ -124,10 +124,10 @@ export default function Inventory() {
             </p>
           </div>
           <button
-            onClick={() => setSortAZ((prev) => !prev)}
+            onClick={() => setSort((prev) => (prev === "relevant" ? "az" : prev === "az" ? "za" : "relevant"))}
             className="px-6 py-2 bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white text-sm uppercase tracking-wider transition-colors"
           >
-            Sort: {sortAZ ? "A → Z" : "Z → A"}
+            Sort: {sort === "relevant" ? "Most Relevant" : sort === "az" ? "A → Z" : "Z → A"}
           </button>
         </div>
       </section>
