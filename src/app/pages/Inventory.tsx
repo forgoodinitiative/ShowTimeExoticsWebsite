@@ -7,7 +7,7 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 const heroSlides = [
   { type: "video" as const, src: rarrduoVideo, label: "SHOWTIMEXOTICS" },
   { type: "car" as const, carId: "ferrari-f8-tributo-purple", label: "Ferrari F8 Tributo", objectPosition: "center 60%" },
-  { type: "car" as const, carId: "lamborghini-aventador-s-black", label: "Lamborghini Aventador S", objectPosition: "center 54%" },
+  { type: "car" as const, carId: "lamborghini-aventador-s-black", label: "Lamborghini Aventador S", objectPosition: "center 60%" },
   { type: "car" as const, carId: "lamborghini-urus-widebody", label: "Lamborghini Urus Widebody", objectPosition: "center 50%" },
 ];
 
