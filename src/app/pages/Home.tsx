@@ -4,11 +4,13 @@ import { cars, Car } from "../data/cars";
 import { useState, useEffect } from "react";
 import LoadingScreen from "../components/LoadingScreen";
 import heroVideo from "../../images/SnapInsta.to_AQNIH7zPEQEe4d1DkpsmhBczR1lcWHkIW9gGBam_tauLEV-Z2b4KhxsWQgFvEvMF_1BfQd6mpXdjh76IhYXwF0uluWbSB9soWCQEd1U.mp4";
+import { useLenis } from "../LenisProvider";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const [showContent, setShowContent] = useState(false);
   const [selectedCar, setSelectedCar] = useState<Car | null>(null);
+  const lenis = useLenis();
   const [modalImageIndex, setModalImageIndex] = useState(0);
 
   useEffect(() => {
@@ -87,7 +89,7 @@ export default function Home() {
         </div>
 
         <button
-          onClick={() => window.scrollBy({ top: window.innerHeight, behavior: "smooth" })}
+          onClick={() => lenis?.scrollTo("#inventory")}
           className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer bg-transparent border-none p-0"
         >
           <ChevronDown size={32} className="text-white/60" />
@@ -113,7 +115,7 @@ export default function Home() {
       {/* The Fleet Preview */}
       <section className="py-20 border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl mb-12 tracking-tight">Inventory</h2>
+          <h2 id="inventory" className="text-3xl md:text-4xl mb-12 tracking-tight">Inventory</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {["ferrari-f8-tributo-purple", "lamborghini-huracan-evo", "lamborghini-urus-performante"]
               .map((id) => cars.find((c) => c.id === id)!)
